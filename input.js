@@ -25,6 +25,12 @@ const handleUserInput = function(key) {
   if (key === 'd') {
     connection.write("Move: right");
   }
+  if (key === 'q') {
+    connection.write("Say: OMG HAAAAI");
+  }
+  if (key === 'e') {
+    connection.write("Say: END IS COMING");
+  }
 }
 
 // Stores the active TCP connection object.
