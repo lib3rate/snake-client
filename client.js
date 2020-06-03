@@ -13,9 +13,18 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server")
     conn.write("Name: DPE");
-  //   conn.write("Move: up");
-  //   setInterval(() => conn.write("Move: up"), 3000)
+    // conn._writableState.length = 50;
+    // conn._writableState.ending = true;
+    // conn._writableState.ended = true;
+    // conn._writableState.writelen = 50;
+    // conn._writableState.finalCalled = true;
+    // conn._events.end;
+    // conn._readableState.length = 50;
+    // console.log(conn._writableState.length);
+    // conn.write("Move: up");
+    // setInterval(() => conn.write("Move: up"), 3000)
   });
+  // console.log(conn);
   return conn;
 }
 
