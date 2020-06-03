@@ -1,3 +1,5 @@
+const { IP, PORT, hotkeys } = require('./constants');
+
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -12,28 +14,26 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-  // “\u0077”
-  if (key === 'w') {
+  if (key === hotkeys.moveUp) {
     connection.write("Move: up");
   }
-  if (key === 'a') {
+  if (key === hotkeys.moveLeft) {
     connection.write("Move: left");
   }
-  if (key === 's') {
+  if (key === hotkeys.moveDown) {
     connection.write("Move: down");
   }
-  if (key === 'd') {
+  if (key === hotkeys.moveRight) {
     connection.write("Move: right");
   }
-  if (key === 'q') {
+  if (key === hotkeys.chat1) {
     connection.write("Say: OMG HAAAAI");
   }
-  if (key === 'e') {
+  if (key === hotkeys.chat2) {
     connection.write("Say: END IS COMING");
   }
 }
 
-// Stores the active TCP connection object.
 let connection;
 
 module.exports = { setupInput }
